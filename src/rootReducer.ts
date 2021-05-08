@@ -4,7 +4,7 @@ import crudModule from "./store/crudModule";
 
 const rootReducer = combineReducers({
   tasks: tasksModule.reducer,
-  crud: crudModule.reducer
+  crud: crudModule.reducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

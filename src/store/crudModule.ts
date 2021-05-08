@@ -18,7 +18,7 @@ type State = {
  * stateの初期値を設定
  */
 const initialState: State = {
-  usersList: []
+  usersList: [],
 };
 
 /**
@@ -26,7 +26,7 @@ const initialState: State = {
  */
 const usersUrl = "https://6034b7e8843b150017933293.mockapi.io/api/v1/users";
 const headers = {
-  "Content-Type": "application/json"
+  "Content-Type": "application/json",
 };
 
 /**
@@ -38,14 +38,14 @@ export const createUser = createAsyncThunk(
   "api/createUser",
   async (name: string, thunk) => {
     const obj = {
-      name
+      name,
     };
     const method = "POST";
     const body = JSON.stringify(obj);
     const response = await fetch(usersUrl, {
       method,
       headers,
-      body
+      body,
     });
     if (response.ok) {
       return await response.json();
@@ -72,7 +72,7 @@ export const updateUser = createAsyncThunk(
     const response = await fetch(`${usersUrl}/${id}`, {
       headers,
       method,
-      body
+      body,
     });
     if (response.ok) {
       return await response.json();
@@ -87,7 +87,7 @@ export const deleteUser = createAsyncThunk(
   async (id: number, thunk) => {
     const method = "DELETE";
     const response = await fetch(`${usersUrl}/${id}`, {
-      method
+      method,
     });
     if (response.ok) {
       return response.json();
@@ -122,7 +122,7 @@ const crudModule = createSlice({
       (state: State, action: PayloadAction<TypeUser[]>) => {
         return {
           ...state,
-          usersList: action.payload
+          usersList: action.payload,
         };
       }
     );
@@ -131,7 +131,7 @@ const crudModule = createSlice({
      */
     builder.addCase(createUser.fulfilled, (state, action) => {
       return {
-        ...state
+        ...state,
       };
     });
     /**
@@ -139,7 +139,7 @@ const crudModule = createSlice({
      */
     builder.addCase(updateUser.fulfilled, (state, action) => {
       return {
-        ...state
+        ...state,
       };
     });
     /**
@@ -147,10 +147,10 @@ const crudModule = createSlice({
      */
     builder.addCase(deleteUser.fulfilled, (state, action) => {
       return {
-        ...state
+        ...state,
       };
     });
-  }
+  },
 });
 
 // export const {} = crudModule.actions;

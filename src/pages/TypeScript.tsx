@@ -76,17 +76,6 @@ const TypeScript: React.FC = () => {
     return x;
   }
 
-  /**
-   * 型アサーション
-   */
-  interface Foo {
-    bar: number;
-    bas: string;
-  }
-  const typeAssertion = {} as Foo;
-  typeAssertion.bar = 123;
-  typeAssertion.bas = "hello";
-
   return (
     <>
       <div>
@@ -117,10 +106,6 @@ const TypeScript: React.FC = () => {
 
           <h2 className={title.sub}>ジェネリクス</h2>
           {genericFunc<string>("hoge")}
-
-          <h2 className={title.sub}>型アサーション</h2>
-          <p>{typeAssertion.bar}</p>
-          <p>{typeAssertion.bas}</p>
         </section>
       </div>
     </>

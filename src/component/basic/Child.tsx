@@ -1,14 +1,15 @@
 import React from "react";
 
 type Props = {
-  name?: string | undefined;
+  name: string | undefined;
 };
 
 const Child: React.FC<Props> = (props) => {
+  const { name } = props;
   return (
     <>
       <div>
-        <p>{props.name}</p>
+        <p>{name}</p>
       </div>
     </>
   );

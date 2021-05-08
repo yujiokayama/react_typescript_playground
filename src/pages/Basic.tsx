@@ -30,8 +30,8 @@ const Basic: React.FC = () => {
     const items: TypeItems[] = [
       {
         key: 1,
-        title: "xxx"
-      }
+        title: "xxx",
+      },
     ];
     const isActive: boolean = true;
     const isShow: boolean = false;
@@ -62,7 +62,7 @@ const Basic: React.FC = () => {
     const isPrimary = true;
     const buttonClassObject = classNames({
       btn: true,
-      "btn-primary": isPrimary
+      "btn-primary": isPrimary,
     });
     // 配列
     const buttonClassArray = classNames(["btn-primary", { btn: true }]);

@@ -124,7 +124,7 @@ const Crud: React.FC = () => {
     return () => {
       // 終了時に呼ばれる箇所
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

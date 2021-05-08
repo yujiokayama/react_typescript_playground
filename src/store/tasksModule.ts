@@ -12,14 +12,14 @@ const initialState: State = {
     {
       id: 2,
       title: "次のTodo",
-      done: false
+      done: false,
     },
     {
       id: 1,
       title: "最初のTodo",
-      done: true
-    }
-  ]
+      done: true,
+    },
+  ],
 };
 
 const tasksModule = createSlice({
@@ -32,7 +32,7 @@ const tasksModule = createSlice({
       const newTask: Task = {
         id: state.count,
         title: action.payload,
-        done: false
+        done: false,
       };
 
       state.tasks = [newTask, ...state.tasks];
@@ -45,8 +45,8 @@ const tasksModule = createSlice({
     },
     deleteTask(state: State, action: PayloadAction<Task>) {
       state.tasks = state.tasks.filter((t) => t.id !== action.payload.id);
-    }
-  }
+    },
+  },
 });
 
 export const { addTask, doneTask, deleteTask } = tasksModule.actions;
@@ -67,5 +67,5 @@ reducers
 ここで設定する関数は、第一引数にstateを受け取り、実行時に渡した引数は第二引数にactionとして受け取ります。実際の値はaction.payloadで取り出します。
 設定したReducerはtasksModule.actions.addTask()で実行できます。
 コンポーネントで使いやすいようにtasksModule.actionsでエクスポートしておきましょう。
-このようにすることでコンポーネントからaddTask()だけで実行できるようになります。 
+このようにすることでコンポーネントからaddTask()だけで実行できるようになります。
  */

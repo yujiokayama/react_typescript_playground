@@ -1,5 +1,4 @@
 import React from "react";
-// import TaskItem from './TaskItem'
 import { useSelector } from "react-redux";
 import TaskItem from "./TaskItem";
 import { RootState } from "../../rootReducer";
