@@ -1,0 +1,18 @@
+// CSS Grid Layout
+@mixin grid-layout($column-gap: 16px, $row-gap: 16px) {
+  display: grid;
+  grid-template-columns: repeat(12, calc(100% / 12 - #{$column-gap}));
+  grid-column-gap: $column-gap;
+  grid-row-gap: $row-gap;
+}
+
+.row {
+  margin: 0 -16px 24px 0;
+  @include grid-layout();
+}
+
+@for $index from 1 through 12 {
+  .col-#{$index} {
+    grid-column-start: span $index;
+  }
+}
