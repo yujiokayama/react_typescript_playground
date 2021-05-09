@@ -146,7 +146,7 @@ const Basic: React.FC = () => {
   return (
     <>
       <div>
-        <h1 className={title.main}>Reactの基礎</h1>
+        <h1 className={title.main}>基礎</h1>
 
         <div className={section}>
           <h2 className={title.sub}>コンポーネント</h2>
