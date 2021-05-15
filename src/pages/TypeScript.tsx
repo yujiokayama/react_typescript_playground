@@ -125,10 +125,6 @@ const TypeScript: React.FC = () => {
 
           <h2 className={title.sub}>ジェネリクス</h2>
           {genericFunc<string>("hoge")}
-
-          <h2 className={title.sub}>型アサーション</h2>
-          <p>{typeAssertion.bar}</p>
-          <p>{typeAssertion.bas}</p>
         </section>
       </div>
     </>
