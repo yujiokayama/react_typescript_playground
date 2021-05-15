@@ -23,6 +23,7 @@ const TypeScript: React.FC = () => {
   /**
    * ユニオン
    */
+
   // 関数の戻り値で使用
   const unionTypeFunc = (x: number): number | string => {
     if (x === 0) {
@@ -42,6 +43,7 @@ const TypeScript: React.FC = () => {
   /**
    * 関数
    */
+
   // 引数・戻り値に型を定義する(省略しても可)
   const testFunction = (num: number): string => {
     return `${num.toLocaleString()} 円`;
@@ -52,7 +54,19 @@ const TypeScript: React.FC = () => {
   };
 
   /**
-   * type
+   * 関数の型宣言
+   */
+
+  // ロングハンド
+  type funcTypeLongHand = {
+    (a: number): number;
+  };
+
+  // ショートハンド
+  type funcTypeShortHand = (a: number) => number;
+
+  /**
+   * type(型エイリアス)
    * 型や型の組み合わせに別名を付ける
    */
 
@@ -62,12 +76,17 @@ const TypeScript: React.FC = () => {
     name: string;
   };
 
-  // 関数の宣言
-  type funcTypeLongHand = {
-    (a: number): number;
-  };
+  /**
+   * インターフェース
+   */
+  interface TypeObjInArr2 {
+    id: number;
+    name: string;
+  }
 
-  type funcTypeShortHand = (a: number) => number;
+  /**
+   * typeとインターフェースの何が違うのか？
+   */
 
   /**
    * ジェネリクス（総称型）
@@ -75,6 +94,17 @@ const TypeScript: React.FC = () => {
   function genericFunc<T>(x: T): T {
     return x;
   }
+
+  /**
+   * 型アサーション
+   */
+  interface Foo {
+    bar: number;
+    bas: string;
+  }
+  const typeAssertion = {} as Foo;
+  typeAssertion.bar = 123;
+  typeAssertion.bas = "hello";
 
   return (
     <>
@@ -106,6 +136,10 @@ const TypeScript: React.FC = () => {
 
           <h2 className={title.sub}>ジェネリクス</h2>
           {genericFunc<string>("hoge")}
+
+          <h2 className={title.sub}>型アサーション</h2>
+          <p>{typeAssertion.bar}</p>
+          <p>{typeAssertion.bas}</p>
         </section>
       </div>
     </>

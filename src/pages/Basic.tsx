@@ -125,7 +125,9 @@ const Basic: React.FC = () => {
     };
     return (
       <>
-        <div ref={refTarget}>...</div>
+        <div>
+          <p ref={refTarget}>この要素を参照します。</p>
+        </div>
         <button onClick={handleClick} className={btn.blue}>
           Click me
         </button>
@@ -146,7 +148,7 @@ const Basic: React.FC = () => {
   return (
     <>
       <div>
-        <h1 className={title.main}>基礎</h1>
+        <h1 className={title.main}>React × TypeScriptの基礎</h1>
 
         <div className={section}>
           <h2 className={title.sub}>コンポーネント</h2>
