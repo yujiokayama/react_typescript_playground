@@ -95,17 +95,6 @@ const TypeScript: React.FC = () => {
     return x;
   }
 
-  /**
-   * 型アサーション
-   */
-  interface Foo {
-    bar: number;
-    bas: string;
-  }
-  const typeAssertion = {} as Foo;
-  typeAssertion.bar = 123;
-  typeAssertion.bas = "hello";
-
   return (
     <>
       <div>
