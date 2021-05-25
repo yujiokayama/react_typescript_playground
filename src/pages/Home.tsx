@@ -1,10 +1,13 @@
 import React from "react";
 
+// components
+import Header from "../component/Header";
+
 const Home: React.FC = () => {
   return (
     <>
-      <div>
-        <h1 className="title">React × TypeScriptの覚書</h1>
+      <div className="main-container">
+        <Header />
       </div>
     </>
   );

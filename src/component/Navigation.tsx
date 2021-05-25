@@ -10,9 +10,9 @@ const Navigation: React.FC = () => {
   return (
     <>
       <nav>
-        <div className="inline-flexf mt-6 mb-3">
+        <div className="mt-6 mb-3">
           <ul
-            className="flex flex-wrap md:p-2 sm:rounded-full text-sm md:text-base"
+            className="flex flex-wrap justify-center md:p-2 sm:rounded-full text-sm md:text-base"
             id="menu_nav"
           >
             {routerJSON.map((router) => {

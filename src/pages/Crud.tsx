@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { title } from "../Class";
 
+// component
+import Header from "../component/Header";
+
 // redux
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -128,7 +131,8 @@ const Crud: React.FC = () => {
 
   return (
     <>
-      <div>
+      <div className="max-w-6xl mx-auto px-10">
+        <Header />
         <h1 className={title.main}>CRUD処理</h1>
         {targetID > 0 && updateModal()}
         <div className="mb-4">

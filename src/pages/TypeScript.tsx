@@ -1,4 +1,8 @@
 import React from "react";
+
+// component
+import Header from "../component/Header";
+
 import { title } from "../Class";
 
 // styles
@@ -97,7 +101,8 @@ const TypeScript: React.FC = () => {
 
   return (
     <>
-      <div>
+      <Header />
+      <div className="max-w-6xl mx-auto px-10">
         <h1 className={title.main}>TypeScriptの基礎</h1>
         <section>
           <h2 className={title.sub}>型</h2>
