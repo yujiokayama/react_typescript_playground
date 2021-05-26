@@ -35,6 +35,29 @@ const Generics: React.FC = () => {
 ]_/. xz
 `}
         </Highlight>
+        <h3>型エイリアス</h3>
+        <Highlight className="js">
+          {`  type KeyValue<T, U> = {
+    key: T;
+    value: U;
+  };
+
+  const obj: KeyValue<string, number> = { key: "文字列", value: 2 };
+`}
+        </Highlight>
+        <h3>型引数に制約を付ける</h3>
+        <Highlight className="js">
+          {`  type argTypes = {
+    name: string;
+  }
+
+  function getName<T extends argTypes>(arg: T): string {
+    return arg.name;
+  }
+
+  getName({ name: "name" });
+`}
+        </Highlight>
       </div>
     </>
   );
