@@ -1,7 +1,15 @@
 [
   {
+    "name": "TypeScriptの基礎",
+    "path": "/typescript"
+  },
+  {
     "name": "React × TypeScriptの基礎",
     "path": "/basic"
+  },
+  {
+    "name": "React Hooks",
+    "path": "/hooks"
   },
   {
     "name": "Form要素の取り扱い",
@@ -10,9 +18,5 @@
   {
     "name": "CRUD処理",
     "path": "/crud"
-  },
-  {
-    "name": "TypeScriptの基礎",
-    "path": "/typescript"
   }
 ]

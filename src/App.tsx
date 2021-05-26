@@ -6,6 +6,7 @@ import Basic from "./pages/Basic";
 import Form from "./pages/Form";
 import Crud from "./pages/Crud";
 import TypeScript from "./pages/TypeScript";
+import Hooks from "./pages/Hooks";
 
 // styles
 import "./assets/scss/styles.scss";
@@ -21,6 +22,7 @@ const App: React.FC = () => {
             <Route path="/form" component={Form} />
             <Route path="/crud" component={Crud} />
             <Route path="/typescript" component={TypeScript} />
+            <Route path="/hooks" component={Hooks} />
           </Switch>
         </BrowserRouter>
       </div>
