@@ -4,17 +4,7 @@ export const section = classNames(["mb-8"]);
 
 export const title = {
   main: classNames(["text-3xl", "font-bold", "text-blue-800", "my-5"]),
-  sub: classNames([
-    "font-bold",
-    "text-blue-700",
-    "my-1",
-    "py-1",
-    "pl-3",
-    "border-solid",
-    "border-2",
-    "border-blue-700",
-    "rounded-md",
-  ]),
+  sub: classNames(["text-2xl", "font-bold", "my-2"]),
 };
 
 export const input = {

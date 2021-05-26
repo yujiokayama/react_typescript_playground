@@ -1,0 +1,43 @@
+import React from "react";
+import Highlight from "react-highlight";
+import "highlight.js/styles/agate.css";
+
+const Generics: React.FC = () => {
+  return (
+    <>
+      <div>
+        <h2>ジェネリクス</h2>
+        <p>
+          Genericsは抽象的な型引数を使用して、実際に利用されるまで型が確定しないクラス・関数・インターフェイスを実現する為に使用する。
+        </p>
+
+        <h3>関数で使用</h3>
+        <Highlight className="js">
+          {`  function test<T>(arg: T): T {
+    return arg;
+  }
+
+  test<number>(1); //=> 1
+  test<string>("文字列"); //=> 文字列
+
+  //※ Genericsでも型推論ができるので、引数から型が明示的にわかる場合は省略が可能
+  test("文字列２"); //=> "文字列２"
+`}
+        </Highlight>
+        <h3>複数の型引数を定義する</h3>
+        <Highlight className="js">
+          {`  function test<T, U, P>(arg1: T, arg2: U, arg3: P): P {
+    return arg3;
+  }
+
+  //※ Genericsでも型推論ができるので、引数から型が明示的にわかる場合は省略が可能
+  test("文字列", true, 4); //=> 4
+]_/. xz
+`}
+        </Highlight>
+      </div>
+    </>
+  );
+};
+
+export default Generics;
