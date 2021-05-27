@@ -28,7 +28,7 @@ const UseEffect: React.FC = () => {
 
   const testUseEffect = () => {
     return (
-      <div>
+      <>
         <p>{count}回クリックされました</p>
         <ButtonGroup color="primary" aria-label="outlined primary button group">
           <Button onClick={() => setCount((prev) => prev + 1)}>ボタン</Button>
@@ -51,7 +51,7 @@ const UseEffect: React.FC = () => {
             }}
           />
         </form>
-      </div>
+      </>
     );
   };
 
@@ -59,6 +59,7 @@ const UseEffect: React.FC = () => {
     <>
       <div>
         <h3>UseEffect</h3>
+        <p>「関数の実行タイミングをReactのレンダリング後まで遅らせるhook</p>
         <p>
           副作用関数を初回レンダリング時の一度だけ実行させたい場合、第2引数に空の依存配列[]を指定する。
         </p>
