@@ -5,6 +5,7 @@ import Header from "../component/Header";
 import UseState from "../component/react/hooks/UseState";
 import UseEffect from "../component/react/hooks/UseEffect";
 import UseRef from "../component/react/hooks/UseRef";
+import UseContextAndUseReducer from "../component/react/hooks/UseContextAndUseReducer";
 
 import { title } from "../Class";
 
@@ -19,6 +20,7 @@ const Hooks: React.FC = () => {
         <UseState />
         <UseEffect />
         <UseRef />
+        <UseContextAndUseReducer />
       </div>
     </>
   );

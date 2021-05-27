@@ -2,6 +2,10 @@ import React, { useRef, useState } from "react";
 import Highlight from "react-highlight";
 import "highlight.js/styles/agate.css";
 
+import Button from "@material-ui/core/Button";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Input from "@material-ui/core/Input";
+
 const UseRef: React.FC = () => {
   const SampleUseRef = () => {
     const inputEl = useRef<HTMLInputElement | null>(null);
@@ -11,8 +15,10 @@ const UseRef: React.FC = () => {
     };
     return (
       <>
-        <input ref={inputEl} type="text" />
-        <button onClick={handleSetText}>set text</button>
+        <Input ref={inputEl} type="text" />
+        <ButtonGroup color="primary" aria-label="outlined primary button group">
+          <Button onClick={handleSetText}>set text</Button>
+        </ButtonGroup>
         <p>テキスト : {text}</p>
       </>
     );
@@ -25,8 +31,6 @@ const UseRef: React.FC = () => {
         <br />
         useRefでは、useStateのようにコンポーネント内での値を保持することが出来る。
       </p>
-
-      <h4>構文</h4>
       <Highlight className="js">
         {`  const SampleUseRef = () => {
     const inputEl = useRef<HTMLInputElement | null>(null);
