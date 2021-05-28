@@ -7,6 +7,7 @@ import Form from "./pages/Form";
 import Crud from "./pages/Crud";
 import TypeScript from "./pages/TypeScript";
 import Hooks from "./pages/Hooks";
+import Apollo from "./pages/Apollo";
 
 // styles
 import "./assets/scss/styles.scss";
@@ -23,6 +24,7 @@ const App: React.FC = () => {
             <Route path="/crud" component={Crud} />
             <Route path="/typescript" component={TypeScript} />
             <Route path="/hooks" component={Hooks} />
+            <Route path="/apollo-graphql" component={Apollo} />
           </Switch>
         </BrowserRouter>
       </div>

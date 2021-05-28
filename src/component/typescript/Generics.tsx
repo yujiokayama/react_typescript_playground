@@ -32,7 +32,6 @@ const Generics: React.FC = () => {
 
   //※ Genericsでも型推論ができるので、引数から型が明示的にわかる場合は省略が可能
   test("文字列", true, 4); //=> 4
-]_/. xz
 `}
         </Highlight>
         <h3>型エイリアス</h3>

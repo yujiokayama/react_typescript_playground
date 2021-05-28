@@ -8,7 +8,6 @@ import "highlight.js/styles/agate.css";
 import TaskList from "../component/todo/TaskList";
 import TaskInput from "../component/todo/TaskInput";
 
-// 子コンポーネント
 import Header from "../component/Header";
 import Child from "../component/basic/Child";
 import Slot from "../component/basic/Slot";

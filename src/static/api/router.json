@@ -18,5 +18,9 @@
   {
     "name": "CRUD処理",
     "path": "/crud"
+  },
+  {
+    "name": "Apollo × GraphQL",
+    "path": "/apollo-graphql"
   }
 ]
