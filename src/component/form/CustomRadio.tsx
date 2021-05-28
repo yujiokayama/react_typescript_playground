@@ -1,4 +1,4 @@
-import React, { createRef, useState } from "react";
+import React, { createRef, useState, useEffect } from "react";
 import classNames from "classnames";
 
 /**
@@ -14,33 +14,42 @@ type Radio = {
   name: string;
 };
 type Props = {
-  options?: Radio[] | undefined;
+  options: Radio[];
 };
 
-const CustomRadio: React.FC<Props> = (props) => {
+const CustomRadio: React.FC<Props> = ({ options }) => {
   const refRadioButtons = createRef<HTMLInputElement>();
-  const [radioVal, setRadioVal] = useState<string>("");
+  const [radioVal, setRadioVal] = useState<string | null>("");
 
-  const handleInputRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setRadioVal(event.target.value);
+  const handleInputRadio = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setRadioVal(e.target.value);
   };
+
+  useEffect(() => {
+    // デフォルトのラジオボタンチェック
+    const radioButtons = document.querySelectorAll<HTMLInputElement>(".radio");
+    setRadioVal("赤");
+    radioButtons[0].checked = true;
+  }, []);
 
   return (
     <>
       <div>
-        {props.options?.map((btn) => (
+        <h2>Radio</h2>
+        {options.map((radio) => (
           <label
-            key={btn.name}
-            className={radioVal === btn.name ? isHover : ""}
+            key={radio.name}
+            className={radioVal === radio.name ? isHover : ""}
           >
-            {btn.name}
+            {radio.name}
             <input
+              className="radio"
               onChange={handleInputRadio}
               ref={refRadioButtons}
               type="radio"
               name="radio"
-              id={btn.cd}
-              value={btn.name}
+              id={radio.cd}
+              value={radio.name}
             />
           </label>
         ))}

@@ -1,14 +1,14 @@
 import React from "react";
 
 type Props = {
-  text: string;
+  text?: string;
 };
 
 const CustomInputText: React.FC<Props> = ({ text }) => {
   return (
     <>
       <div>
-        <input id="" type="text" name="" value={text} />
+        <h2>Input Text</h2>
       </div>
     </>
   );
