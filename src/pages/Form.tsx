@@ -20,7 +20,7 @@ const Form: React.FC = () => {
       <div className="max-w-6xl mx-auto px-10">
         <h1 className={title.main}>Form要素の取り扱い</h1>
         <CustomRadio options={radioOptions} />
-        <CustomInputText text="aaaa" />
+        <CustomInputText />
       </div>
     </>
   );
