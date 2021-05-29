@@ -6,6 +6,7 @@ import Type from "../component/typescript/Type";
 import Function from "../component/typescript/Function";
 import AliasAndInterface from "../component/typescript/AliasAndInterface";
 import Generics from "../component/typescript/Generics";
+import Event from "../component/typescript/Event";
 
 // styles
 import { title } from "../Class";
@@ -19,6 +20,7 @@ const TypeScript: React.FC = () => {
         <h1 className={title.main}>TypeScriptの基礎</h1>
         <section>
           <Type />
+          <Event />
           <Function />
           <AliasAndInterface />
           <Generics />

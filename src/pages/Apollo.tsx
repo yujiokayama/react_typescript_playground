@@ -46,24 +46,23 @@ const UserList = () => {
 
 const UserInput = () => {
   const [state, setState] = useState("");
-  const createUser: any = useMutation<{ createUser: Users }>(CREATE_USER, {
-    refetchQueries: [{ query: GET_USERS }],
-    variables: { name: state },
-  });
 
-  const onClick = () => {
-    createUser();
+  const handleClick = () => {
+    useMutation<{ createUser: Users }>(CREATE_USER, {
+      refetchQueries: [{ query: GET_USERS }],
+      variables: { name: state },
+    });
   };
 
-  const onChange = (e: React.SyntheticEvent<HTMLInputElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setState(e.currentTarget.value);
   };
 
   return (
     <div>
-      <input type="text" value={state} onChange={onChange} />
+      <Input type="text" value={state} onChange={onChange} />
       <ButtonGroup color="primary" aria-label="outlined primary button group">
-        <Button onClick={onClick}>Add</Button>
+        <Button onClick={handleClick}>Add</Button>
       </ButtonGroup>
     </div>
   );
