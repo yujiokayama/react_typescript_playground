@@ -47,8 +47,10 @@ const UserList = () => {
 const UserInput = () => {
   const [state, setState] = useState("");
 
+  const [createUser] = useMutation(CREATE_USER);
+
   const handleClick = () => {
-    useMutation<{ createUser: Users }>(CREATE_USER, {
+    createUser({
       refetchQueries: [{ query: GET_USERS }],
       variables: { name: state },
     });
@@ -74,7 +76,7 @@ const Apollo: React.FC = () => {
       <Header />
       <div className="max-w-6xl mx-auto px-10">
         <h1 className={title.main}>Apollo × GraphQL</h1>
-        <p>※サーバ立ち上げて確認</p>
+        <p>※ローカルサーバ立ち上げて確認</p>
         <ApolloProvider client={appClient}>
           <ApolloHooksProvider client={appClient}>
             <UserInput />
