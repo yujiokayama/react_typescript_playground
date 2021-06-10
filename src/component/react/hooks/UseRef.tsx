@@ -25,7 +25,7 @@ const UseRef: React.FC = () => {
   };
   return (
     <>
-      <h3>useRef</h3>
+      <h2>useRef</h2>
       <p>
         DOM要素への参照ができる
         <br />

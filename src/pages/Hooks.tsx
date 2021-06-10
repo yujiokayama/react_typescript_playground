@@ -16,7 +16,6 @@ const Hooks: React.FC = () => {
       <div className="max-w-6xl mx-auto px-10">
         <h1 className={title.main}>React Hooks</h1>
         <p></p>
-        <h2>React Hooks</h2>
         <UseState />
         <UseEffect />
         <UseRef />

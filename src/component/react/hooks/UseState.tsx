@@ -34,7 +34,7 @@ const UseState: React.FC = () => {
   return (
     <>
       <div>
-        <h3>useState</h3>
+        <h2>useState</h2>
         <p>
           useState()は、関数コンポーネントでstateを管理（stateの保持と更新）
         </p>

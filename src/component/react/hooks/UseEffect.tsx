@@ -58,7 +58,7 @@ const UseEffect: React.FC = () => {
   return (
     <>
       <div>
-        <h3>UseEffect</h3>
+        <h2>UseEffect</h2>
         <p>「関数の実行タイミングをReactのレンダリング後まで遅らせるhook</p>
         <p>
           副作用関数を初回レンダリング時の一度だけ実行させたい場合、第2引数に空の依存配列[]を指定する。
