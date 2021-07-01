@@ -288,7 +288,7 @@ const Basic: React.FC = () => {
         <div className={section}>
           <h2 className={title.sub}>ref</h2>
           <Highlight className="js">
-            {`  const refTarget = useRef<HTMLDivElement>(null);
+            {` const refTarget = useRef<HTMLParagraphElement>(null);
   const sampleRef = () => {
     const handleClick = () => {
       console.log(refTarget.current);
@@ -299,6 +299,7 @@ const Basic: React.FC = () => {
         <button onClick={handleClick} className={btn.blue}>
           Click me
         </button>
+        <p>※コンソールで確認</p>
       </>
     );
   };
