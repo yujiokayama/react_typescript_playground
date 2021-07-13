@@ -140,6 +140,14 @@ const Basic: React.FC = () => {
   };
 
   /**
+   * コンポーネント間のイベント通知
+   */
+  const [stateProp, setStateProp] = useState<string>("");
+  const updateState = (): void => {
+    setStateProp("更新した");
+  };
+
+  /**
    * コンポーネントの差し込み
    */
   const SampleSlotHeader = () => {
@@ -311,7 +319,7 @@ const Basic: React.FC = () => {
           <h2 className={title.sub}>コンポーネント間の連携</h2>
           <p>親</p>
           <Highlight className="js">
-            {` <Child name={"hoge"} />
+            {` <Child name="hoge" />
 `}
           </Highlight>
           <p>子コンポーネント</p>
@@ -336,8 +344,43 @@ const Basic: React.FC = () => {
   export default Child;
 `}
           </Highlight>
-          <Child name={"nameをpropsとして渡す"} />
+          <Child name="nameをpropsとして渡す" />
         </div>
+
+        <div className={section}>
+          <h2 className={title.sub}>コンポーネント間のイベント通知</h2>
+          <p>親</p>
+          <Highlight className="js">
+            {` <Child testFunction={parentMethod} />
+`}
+          </Highlight>
+          <p>子コンポーネント</p>
+          <Highlight className="js">{`
+  import React from "react";
+
+  type Props = {
+    name?: string | undefined;
+    testFunction?: () => void;
+  };
+
+  const Child: React.FC<Props> = ({ name, testFunction }) => {
+    return (
+      <>
+        {/* props name */}
+        <div>
+          <p>{name}</p>
+        </div>
+        {/* props function */}
+        {testFunction ? testFunction() : null}
+      </>
+    );
+  };
+
+  export default Child;
+          `}</Highlight>
+          <Child functionProp={updateState} />
+        </div>
+
         <div className={section}>
           <h2 className={title.sub}>複数のコンテンツの差し込み</h2>
           <p>親</p>
