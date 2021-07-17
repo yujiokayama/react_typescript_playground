@@ -26,7 +26,7 @@ const Generics: React.FC = () => {
         </Highlight>
         <h3>複数の型引数を定義する</h3>
         <Highlight className="js">
-          {`  function test<T, U, P>(arg1: T, arg2: U, arg3: P): P {
+          {`  const test = <T, U, P>(arg1: T, arg2: U, arg3: P): P => {
     return arg3;
   }
 
@@ -50,7 +50,7 @@ const Generics: React.FC = () => {
     name: string;
   }
 
-  function getName<T extends argTypes>(arg: T): string {
+  const getName = <T extends argTypes>(arg: T): string => {
     return arg.name;
   }
 
